@@ -1,0 +1,11 @@
+{
+  "name": "exp7",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "event-loop": "node event_loop_demo.js",
+    "streams": "node streams_buffers_demo.js"
+  }
+}
