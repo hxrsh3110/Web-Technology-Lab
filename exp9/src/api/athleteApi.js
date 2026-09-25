@@ -1,12 +1,15 @@
 import axios from 'axios';
 
-// Centralized Axios instance targeting the Express API
+const baseURL = import.meta.env.VITE_API_BASE_URL 
+  ? `${import.meta.env.VITE_API_BASE_URL}/api/athletes` 
+  : 'http://localhost:5000/api/athletes';
+
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api/athletes',
+  baseURL,
   headers: {
     'Content-Type': 'application/json'
   },
-  timeout: 5000 // 5-second defensive timeout
+  timeout: 10000
 });
 
 export const fetchAthletes = () => API.get('/');
